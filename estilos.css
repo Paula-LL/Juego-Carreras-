@@ -1,0 +1,12 @@
+.col{
+    
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+.centroCartas{
+    background-color: greenyellow;
+}
+.jugadores{
+    background-color: brown;
+}
