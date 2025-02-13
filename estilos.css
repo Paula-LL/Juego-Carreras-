@@ -1,8 +1,8 @@
 .col{
     
     border: 1px solid black;
-    height: 100px;
-    width: 100px;
+    min-height: 100px;
+    max-height: 100px;
 }
 .centroCartas{
     background-color: greenyellow;
@@ -10,3 +10,10 @@
 .jugadores{
     background-color: brown;
 }
+
+.centro {
+    text-align: center;
+    line-height: 98px;
+    padding: 0%;
+    margin-bottom: 0%;
+  }
