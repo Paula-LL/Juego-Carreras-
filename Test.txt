@@ -3,6 +3,6 @@ Que se sume el valor de cada ficha
 2 botones (cuando se dice si es mas alta o mas baja la carta, se pasa a la fase de apuestas)
 Se da la apuesta contando con las fichas que quedan en mano
 Si se gana se lleva el bote, si pierdes lo que has apostado se pierde
-5 jugadores
+1 jugador
 Cartas
 
