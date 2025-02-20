@@ -4,7 +4,14 @@ dom.ready(generateImage);
 generateChoice = document.getElementById("generateChoice");
 generateImage = document.getElementById("generateImage")
 
-function Change() {
+const card = document.querySelector(".card");
+
+//from https://blog.nicm42.co.uk/flip-cards
+/* card.addEventListener("click", function () {
+  card.classList.toggle("show");
+}); */
+
+/* function Change() {
     let genChoice = $("#generateChoice");
     var randVal = Math.floor((Math.random() * 4) + 1);
     console.log(randVal);
@@ -20,4 +27,4 @@ function GenImg1(genChoice) {
             choice.attr("src", "Cartas.png");
             break;
     }
-}
+} */
