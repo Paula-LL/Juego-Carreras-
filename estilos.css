@@ -1,8 +1,9 @@
+
+
 .col{
     
     border: 1px solid black;
     min-height: 100px;
-    max-height: 100px;
 }
 .centroCartas{
     background-color: greenyellow;
@@ -16,4 +17,55 @@
     line-height: 98px;
     padding: 0%;
     margin-bottom: 0%;
+  }
+  .tamañoImagenesFichas{
+    width: 95px;
+    height: 95px;
+  }
+  .tamañoImagenesCartas{
+    width: 150px;
+    height: 240px;
+    
+  }
+  .imagenCartaCentrada{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 50%;
+  }
+  .botones{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    border-color: gold;
+    background-color: black;
+    color: gold;
+    border: 2px solid;
+    font-family:"Playfair Display"
+    
+
+  }
+
+  .titulos {
+    text-align:center; 
+    font-size:27px; 
+    text-transform:uppercase; 
+    color:#ffffff; 
+    letter-spacing:1px;
+    font-family:"Playfair Display", serif; 
+    font-weight:400;
+    padding-top: 26px;
+  }
+  .colorLetra{
+    color: white;
+  }
+  .mesa{
+    border-radius: 20px; 
+    border: 10px solid rgb(116, 63, 4); 
+    background-color: rgb(4, 87, 4);
   }
