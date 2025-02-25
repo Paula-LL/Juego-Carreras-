@@ -1,13 +1,13 @@
-
-
 .col{
     
     border: 1px solid black;
     min-height: 100px;
 }
+
 .centroCartas{
     background-color: greenyellow;
 }
+
 .jugadores{
     background-color: brown;
 }
@@ -18,15 +18,18 @@
     padding: 0%;
     margin-bottom: 0%;
   }
+
   .tamañoImagenesFichas{
     width: 95px;
     height: 95px;
   }
+
   .tamañoImagenesCartas{
     height: 260px;
     width: 160px;
     
   }
+
   .imagenCartaCentrada{
     display: block;
     margin-left: auto;
@@ -40,6 +43,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .botones{
     display: block;
     margin-left: auto;
@@ -67,15 +71,18 @@
     font-weight:400;
     padding-top: 26px;
   }
+
   .colorLetra{
     color: white;
   }
+
   .mesa{
     border-radius: 20px; 
     border: 10px solid rgb(116, 63, 4); 
     background-color: rgb(4, 87, 4);
   }
-.letra{
+
+.letraColumnaDerecha{
     font-size:13px; 
     text-transform:uppercase; 
     color:#ffffff; 
@@ -83,4 +90,13 @@
     font-family:"Playfair Display", serif; 
     font-weight:20;
     margin-top: 20px;
+}
+
+.letraColumnaIzquierda{
+  font-size:13px; 
+  text-transform:uppercase; 
+  color:#ffffff; 
+  letter-spacing:1px;
+  font-family:"Playfair Display", serif; 
+  font-weight:20;
 }
