@@ -27,4 +27,4 @@ function GenImg1(genChoice) {
             choice.attr("src", "Cartas.png");
             break;
     }
-} */
+}  */
