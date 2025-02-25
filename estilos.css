@@ -23,7 +23,7 @@
     height: 95px;
   }
   .tamañoImagenesCartas{
-    height: 240px;
+    height: 260px;
     width: 160px;
     
   }
@@ -31,8 +31,14 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 20px;
     
+  }
+
+  .imagenFichaCentrada{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   .botones{
     display: block;
