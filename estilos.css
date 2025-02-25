@@ -75,3 +75,12 @@
     border: 10px solid rgb(116, 63, 4); 
     background-color: rgb(4, 87, 4);
   }
+.letra{
+    font-size:13px; 
+    text-transform:uppercase; 
+    color:#ffffff; 
+    letter-spacing:1px;
+    font-family:"Playfair Display", serif; 
+    font-weight:20;
+    margin-top: 20px;
+}
