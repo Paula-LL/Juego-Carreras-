@@ -3,6 +3,7 @@ dom.ready(generateChoice);
 dom.ready(generateImage);
 dom.ready(userCard);
 dom.ready(ChipClicked);
+dom.ready(ChangeClicked);
 generateChoice = document.getElementById("generateChoice");
 generateImage = document.getElementById("generateImage")
 userCard = document.getElementById("userCard");
@@ -45,6 +46,7 @@ function Change(randValue) {
     console.log("randValue:" + randValue);
     let genChoice = $("#generateChoice");
     let randVal = Math.floor((Math.random() * 4) + 1);
+    
     while (randValue == randVal) {
         console.log("repeated");
         randVal = Math.floor((Math.random() * 4) + 1);
@@ -53,6 +55,13 @@ function Change(randValue) {
         console.log("IA Player Card: " + randVal);
         GenImg1(randVal);
     }
+}
+
+function ChangeClicked(){
+    let buttonHigh = $(".higher");
+    let buttonLower = $(".lower");
+    buttonHigh.click(Change);
+    buttonLower.click(Change);
 }
 
 function GenImg1(genChoice) {
