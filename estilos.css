@@ -19,6 +19,14 @@
     margin-bottom: 0%;
   }
 
+  .centroCartaActual{
+    text-align: center;
+    line-height: 98px;
+    padding: 0%;
+    margin-bottom: 0%;
+    padding-left: 190px;
+  }
+
   .tamañoImagenesFichas{
     width: 95px;
     height: 95px;
@@ -42,6 +50,10 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .cursor{
+    cursor: pointer;
   }
 
   .botones{

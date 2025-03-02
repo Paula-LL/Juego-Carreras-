@@ -98,7 +98,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <button id="generateChoice" class="botones higher">Higher</button>
+                                        <button id="generateChoice " class="botones higher BottonHigher">Higher</button>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,10 @@
                         <div class="col titulos ">Puntuación</div>
                     </div>
                     <div class="row">
-                        <div class="col"></div>
+                        <div class="col">
+                            <p  class="letraColumnaDerecha" >Rondas Ganadas: <span id="rondaGanada" >0</span> </p>
+                            <p class="letraColumnaDerecha">Rondas Perdidas: <span id = "rondaPerdida" >0</span> </p>
+                        </div>
                     </div>
                     <div style="height: 300px;"  class="row">
                         <div class ="col">
@@ -126,7 +129,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <span id="displayCard" >Esperando carta..</span>
+                            <span id="displayCard" class="centroCartaActual colorLetra letraColumnaIzquierda" >Esperando carta...</span>
                         </div>
                     </div>
                 </div>
@@ -141,10 +144,10 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <img id="Imagen1" class="tamañoImagenesFichas imagenFichaCentrada" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor1Transparente.png" alt="">
+                                        <img onclick="canviarTexto()" id="Imagen1" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor1Transparente.png" alt="">
                                     </div>
                                     <div class="col">
-                                        <p class="letraColumnaDerecha ">Posesion: <span id="ChipClicked" >0</span> </p>
+                                        <p class="letraColumnaDerecha ">Posesion: <span id="Posesion">5</span> </p>
                                         <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked" >0</span> </p>        
                                     </div>
                                 </div>
@@ -156,26 +159,11 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <img style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor5_Transparente.png" alt="">
+                                        <img  onclick="canviarTexto1()" id="Imagen2" style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor5_Transparente.png" alt="">
                                     </div>
                                     <div class="col">
-                                        <p class="letraColumnaDerecha">Posesion: <span id="ChipClicked" >0</span> </p>
-                                        <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked" >0</span> </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <img style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor25-transparente.png" alt="">
-                                    </div>
-                                    <div class="col">
-                                        <p class="letraColumnaDerecha">Posesion: <span id="ChipClicked" >0</span> </p>
-                                        <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked" >0</span> </p>
+                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion">5</span> </p>
+                                        <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked1" >0</span> </p>
                                     </div>
                                 </div>
                             </div>
@@ -186,26 +174,11 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <img style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor50-transparente.png" alt="">
+                                        <img  onclick="canviarTexto2()" id="Imagen3" style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor25-transparente.png" alt="">
                                     </div>
                                     <div class="col">
-                                        <p class="letraColumnaDerecha">Posesion: <span id="ChipClicked" >0</span> </p>
-                                        <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked" >0</span> </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <img style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor100-transparente.png" alt="">
-                                    </div>
-                                    <div class="col">
-                                        <p class="letraColumnaDerecha">Posesion: <span id="ChipClicked" >0</span> </p>
-                                        <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked">0</span> </p>
+                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion">5</span> </p>
+                                        <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked2" >0</span> </p>
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +189,37 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <button id="generateChoice"  class="botones lower">Lower</button>
+                                        <img  onclick="canviarTexto3()" id="Imagen4" style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor50-transparente.png" alt="">
+                                    </div>
+                                    <div class="col">
+                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion">5</span> </p>
+                                        <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked3" >0</span> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <img  onclick="canviarTexto4()" id="Imagen5" style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor100-transparente.png" alt="">
+                                    </div>
+                                    <div class="col">
+                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion">5</span> </p>
+                                        <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked4">0</span> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <button id="generateChoice"  class="botones lower BottonLower">Lower</button>
                                     </div>
                                 </div>
                             </div>
