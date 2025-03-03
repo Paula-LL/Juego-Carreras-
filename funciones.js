@@ -7,11 +7,15 @@ generateChoice = document.getElementById("generateChoice");
 generateImage = document.getElementById("generateImage")
 userCard = document.getElementById("userCard");
 posesion = document.getElementById("posesion");
+
+//User bet chips
 var dineroActual1 = 0;
 var dineroActual2 = 0;
 var dineroActual3 = 0;
 var dineroActual4 = 0;
 var dineroActual5 = 0;
+
+//Starting chips
 var posesion1 = 5;
 var posesion2 = 5;
 var posesion3 = 5;
@@ -22,10 +26,13 @@ var posesion5 = 5;
 
 //FUNCIONES PARA CANVIAR EL TEXTO CUANDO SE CLIQUEN LAS IMAGENES DE LAS FICHAS
 
-function canviarTexto() {
+function canviarTexto(betWon) {
     let Imagen1 = $("#Imagen1");
-    Imagen1.click(SumoValor1())
-
+    Imagen1.click(SumoValor1());
+    if(betWon = true){
+        ChipsWon1();
+    }
+        
 }
 function canviarTexto1() {
     let Imagen2 = $("#Imagen2");
@@ -175,25 +182,25 @@ function PlayerCardDisplay(randValue) {
 function Change() {
     let genChoice = $("#generateChoice");
     let randVal = Math.floor((Math.random() * 12) + 1);
-    
+
     while (randVal === playerCardValue) {
         randVal = Math.floor((Math.random() * 12) + 1);
     }
-    
+
     GenImg1(randVal);
 }
 
 
 function ChangeClicked() {
-    if(!isInitialized) {
+    if (!isInitialized) {
         let buttonHigh = $(".higher");
         let buttonLower = $(".lower");
-        
+
         buttonHigh.click(() => {// aixo es per quan es cliqui el botó  higher
             $(document).data('lastClick', 'higher'); //guardem com a informacio temporal en "lastClick" si s'ha pulsat el boto higher
             Change();
         });
-        
+
         buttonLower.click(() => { // aixo es per quan es cliqui el botó lower
             $(document).data('lastClick', 'lower'); //guardem com a informacio temporal en "lasClick" si s'ha pulsat el boto lower
             Change();
@@ -256,31 +263,37 @@ function GenImg1(genChoice) {
 function compararCartas(cartaMostradaImagen) {
     let rondaGanada = $("#rondaGanada");
     let rondaPerdida = $("#rondaPerdida");
-    
+
     // Obtenir el ultim click que s'ha fet, aquesta variable anomenada lastClick esta en la funcio ChangeCliked
     const lastClick = $(document).data('lastClick');
-    
+
     // Quan es detecti un ultim click, que executi la funcio
-    if(lastClick) {
-        if(lastClick === 'higher') { //de la funcio ChangeClicked, recollim la informacio del ultim click que em afegit en "lastClick" i si es el boto higher entrem a aquest if
-            if(cartaMostradaImagen > playerCardValue) {
+    if (lastClick) {
+        if (lastClick === 'higher') { //de la funcio ChangeClicked, recollim la informacio del ultim click que em afegit en "lastClick" i si es el boto higher entrem a aquest if
+            if (cartaMostradaImagen > playerCardValue) {
                 rondasGanadas++;
                 rondaGanada.text(rondasGanadas);
-                
+                //add winnings to chips owned
+                let betWon = true;
+                ChipsWon1(); 
             } else {
                 rondasPerdidas++;
                 rondaPerdida.text(rondasPerdidas);
-                
+                //substranct chips betted from chips owned
+                let betWon = false;
             }
-        } else if(lastClick === 'lower') { //de la funcio ChangeClicked, recollim la informacio del ultim click que em afegit en "lastClick" i si es el boto lower entrem a aquest if
-            if(cartaMostradaImagen < playerCardValue) {
+        } else if (lastClick === 'lower') { //de la funcio ChangeClicked, recollim la informacio del ultim click que em afegit en "lastClick" i si es el boto lower entrem a aquest if
+            if (cartaMostradaImagen < playerCardValue) {
                 rondasGanadas++;
                 rondaGanada.text(rondasGanadas);
-                
+                //add winnings to chips owned
+                let betWon = true;
+                ChipsWon1();
             } else {
                 rondasPerdidas++;
                 rondaPerdida.text(rondasPerdidas);
-                
+                //substranct chips betted from chips owned
+                let betWon = false;
             }
         }
         // Eliminar el ultim click que hem fet perque no es sumin rondes de mes
@@ -288,6 +301,12 @@ function compararCartas(cartaMostradaImagen) {
     }
 }
 
+function ChipsWon1(dineroActual1, posesion1){
+    let chipsBetWon1= posesion1 + dineroActual1;
+    dineroActual1.text(chipsBetWon1);
+    posesion1 = chipsBetWon1;
+    dineroActual1 = 0;
+}
 
 
 
