@@ -150,11 +150,17 @@ function SumoValor5() {
 
 
 
-//FUNCIONES PARA CAMBIAR LAS IMAGENES DE LAS CARTAS
+//FUNCIONES PARA CAMBIAR LAS IMAGENES DE LAS CARTA
+
+
+let rondasGanadas = 0;
+let rondasPerdidas = 0;
+let playerCardValue = 0; // Se necesita almacenar la carta del jugador
+let isInitialized = false;
 
 function PlayerCard() {
     let playCard = $("#userCard");
-    let randValue = Math.floor((Math.random() * 4) + 1);
+    let randValue = Math.floor((Math.random() * 12) + 1);
     console.log("Player Number Card: " + randValue);
     playerCardValue = randValue;
     PlayerCardDisplay(randValue);
@@ -166,24 +172,35 @@ function PlayerCardDisplay(randValue) {
     document.getElementById("displayCard").innerHTML = randValue;
 }
 
-function Change(randValue) {
+function Change() {
     let genChoice = $("#generateChoice");
-    let randVal = Math.floor((Math.random() * 4) + 1);
-
-    while (randValue == randVal) {
-        console.log("repeated");
-        randVal = Math.floor((Math.random() * 4) + 1);
+    let randVal = Math.floor((Math.random() * 12) + 1);
+    
+    while (randVal === playerCardValue) {
+        randVal = Math.floor((Math.random() * 12) + 1);
     }
-    if (randValue != randVal) {
-        GenImg1(randVal);
-    }
+    
+    GenImg1(randVal);
 }
 
+
 function ChangeClicked() {
-    let buttonHigh = $(".higher");
-    let buttonLower = $(".lower");
-    buttonHigh.click(Change);
-    buttonLower.click(Change);
+    if(!isInitialized) {
+        let buttonHigh = $(".higher");
+        let buttonLower = $(".lower");
+        
+        buttonHigh.click(() => {// aixo es per quan es cliqui el botó  higher
+            $(document).data('lastClick', 'higher'); //guardem com a informacio temporal en "lastClick" si s'ha pulsat el boto higher
+            Change();
+        });
+        
+        buttonLower.click(() => { // aixo es per quan es cliqui el botó lower
+            $(document).data('lastClick', 'lower'); //guardem com a informacio temporal en "lasClick" si s'ha pulsat el boto lower
+            Change();
+        });
+
+        isInitialized = true;
+    }
 }
 
 function GenImg1(genChoice) {
@@ -239,21 +256,36 @@ function GenImg1(genChoice) {
 function compararCartas(cartaMostradaImagen) {
     let rondaGanada = $("#rondaGanada");
     let rondaPerdida = $("#rondaPerdida");
-
-    if (buttonHigh.click && cartaMostradaImagen > playerCardValue) {
-        rondasGanadas++;
-        rondaGanada.text(rondasGanadas);
-    } else if (buttonHigh.click && cartaMostradaImagen < playerCardValue) {
-        rondasPerdidas++;
-        rondaPerdida.text(rondasPerdidas);
-    } else if (buttonLower.click && cartaMostradaImagen < playerCardValue) {
-        rondasGanadas++;
-        rondaGanada.text(rondasGanadas);
-    } else if (buttonLower.click && cartaMostradaImagen > playerCardValue) {
-
+    
+    // Obtenir el ultim click que s'ha fet
+    const lastClick = $(document).data('lastClick');
+    
+    // Quan es detecti un ultim click, que executi la funcio
+    if(lastClick) {
+        if(lastClick === 'higher') { //de la funcio ChangeClicked, recollim la informacio del ultim click que em afegit en "lastClick" i si es el boto higher entrem a aquest if
+            if(cartaMostradaImagen > playerCardValue) {
+                rondasGanadas++;
+                rondaGanada.text(rondasGanadas);
+                
+            } else {
+                rondasPerdidas++;
+                rondaPerdida.text(rondasPerdidas);
+                
+            }
+        } else if(lastClick === 'lower') { //de la funcio ChangeClicked, recollim la informacio del ultim click que em afegit en "lastClick" i si es el boto lower entrem a aquest if
+            if(cartaMostradaImagen < playerCardValue) {
+                rondasGanadas++;
+                rondaGanada.text(rondasGanadas);
+                
+            } else {
+                rondasPerdidas++;
+                rondaPerdida.text(rondasPerdidas);
+                
+            }
+        }
+        // Eliminar el ultim click que hem fet perque no es sumin rondes de mes
+        $(document).data('lastClick', null);
     }
-
-
 }
 
 
