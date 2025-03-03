@@ -26,13 +26,10 @@ var posesion5 = 5;
 
 //FUNCIONES PARA CANVIAR EL TEXTO CUANDO SE CLIQUEN LAS IMAGENES DE LAS FICHAS
 
-function canviarTexto(betWon) {
+function canviarTexto() {
     let Imagen1 = $("#Imagen1");
     Imagen1.click(SumoValor1());
-    if(betWon = true){
-        ChipsWon1();
-    }
-        
+
 }
 function canviarTexto1() {
     let Imagen2 = $("#Imagen2");
@@ -57,7 +54,7 @@ function canviarTexto4() {
 
 
 
-function SumoValor1() {
+function SumoValor1(betWon) {
 
     let dineroPosesion = $("#Posesion");
     dineroPosesion.text(posesion1);
@@ -72,7 +69,9 @@ function SumoValor1() {
     ChipClicked.text(numero1)
     dineroActual1 = numero1;
 
-
+    if (betWon = true) {
+        ChipsWon1();
+    }
 
 }
 
@@ -274,8 +273,8 @@ function compararCartas(cartaMostradaImagen) {
                 rondasGanadas++;
                 rondaGanada.text(rondasGanadas);
                 //add winnings to chips owned
-                let betWon = true;
-                ChipsWon1(); 
+                let betWon = true;//for (if) to change printed number  
+                ChipsWon1();
             } else {
                 rondasPerdidas++;
                 rondaPerdida.text(rondasPerdidas);
@@ -301,8 +300,8 @@ function compararCartas(cartaMostradaImagen) {
     }
 }
 
-function ChipsWon1(dineroActual1, posesion1){
-    let chipsBetWon1= posesion1 + dineroActual1;
+function ChipsWon1(dineroActual1, posesion1) {
+    let chipsBetWon1 = posesion1 + dineroActual1;
     dineroActual1.text(chipsBetWon1);
     posesion1 = chipsBetWon1;
     dineroActual1 = 0;
