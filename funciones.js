@@ -206,7 +206,7 @@ function ChangeClicked() {
 function GenImg1(genChoice) {
 
     let choice = $("#generateImage");
-    let cardValue = genChoice;
+    let cardValue = genChoice; //guardem el valor de generador de cartes en una variable anomenada cardValue per poder despres fer la comparacio
 
     switch (genChoice) {
         case 1:
@@ -257,7 +257,7 @@ function compararCartas(cartaMostradaImagen) {
     let rondaGanada = $("#rondaGanada");
     let rondaPerdida = $("#rondaPerdida");
     
-    // Obtenir el ultim click que s'ha fet
+    // Obtenir el ultim click que s'ha fet, aquesta variable anomenada lastClick esta en la funcio ChangeCliked
     const lastClick = $(document).data('lastClick');
     
     // Quan es detecti un ultim click, que executi la funcio
