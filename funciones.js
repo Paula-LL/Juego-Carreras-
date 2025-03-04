@@ -1,11 +1,9 @@
 let dom = $(document);
 dom.ready(generateChoice);
 dom.ready(generateImage);
-dom.ready(userCard);
 dom.ready(ChangeClicked);
 generateChoice = document.getElementById("generateChoice");
 generateImage = document.getElementById("generateImage")
-userCard = document.getElementById("userCard");
 posesion = document.getElementById("posesion");
 
 //User bet chips
@@ -156,14 +154,13 @@ function SumoValor5() {
 
 //FUNCIONES PARA CAMBIAR LAS IMAGENES DE LAS CARTA
 
-
+let puntuacionFinal = 0;
 let rondasGanadas = 0;
 let rondasPerdidas = 0;
 let playerCardValue = 0; // Se necesita almacenar la carta del jugador
 let isInitialized = false;
 
 function PlayerCard() {
-    let playCard = $("#userCard");
     let randValue = Math.floor((Math.random() * 12) + 1);
     console.log("Player Number Card: " + randValue);
     playerCardValue = randValue;
@@ -261,6 +258,8 @@ function GenImg1(genChoice) {
     compararCartas(cardValue);
 }
 
+
+
 function compararCartas(cartaMostradaImagen) {
     let rondaGanada = $("#rondaGanada");
     let rondaPerdida = $("#rondaPerdida");
@@ -325,6 +324,8 @@ function PerderFichas(){
     $("#ChipClicked3").text(0);
     $("#ChipClicked4").text(0);
 
+    
+
 
 }
 
@@ -356,18 +357,21 @@ function GanarFichas(){
     $("#ChipClicked2").text(0);
     $("#ChipClicked3").text(0);
     $("#ChipClicked4").text(0);
+    
 
 }
 
-/*let puntuacionFinal = 0;
+
+//intent de funcio perque es mostri la puntuacio final
+
 
 function myFunction() {
-    var popup = document.getElementById("myPopup");
-    puntuacionFinal = (posesion1 * 1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100); 
-    popup.classList.toggle("show");
-    myPopup.text(puntuacionFinal);
+    let PuntuacionFinal = $("PuntuacionFinal");
     
-  }*/
+    PuntuacionFinal = (posesion1 * 1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100); 
+    PuntuacionFinal.text(PuntuacionFinal);
+    
+  }
 
 
 
