@@ -54,7 +54,7 @@ function canviarTexto4() {
 
 
 
-function SumoValor1(betWon) {
+function SumoValor1() {
 
     let dineroPosesion = $("#Posesion1");
     dineroPosesion.text(posesion1);
@@ -176,6 +176,7 @@ function PlayerCardDisplay(randValue) {
     document.getElementById("displayCard").innerHTML = randValue;
 }
 
+
 function Change() {
     let genChoice = $("#generateChoice");
     let randVal = Math.floor((Math.random() * 12) + 1);
@@ -187,7 +188,7 @@ function Change() {
     GenImg1(randVal);
 }
 
-
+//funcio que detecta quins butons han sigut clicats
 function ChangeClicked() {
     if (!isInitialized) {
         let buttonHigh = $(".higher");
@@ -207,6 +208,9 @@ function ChangeClicked() {
     }
 }
 
+
+
+//funcio que dona valor a les imatges de les cartes
 function GenImg1(genChoice) {
 
     let choice = $("#generateImage");
@@ -270,30 +274,20 @@ function compararCartas(cartaMostradaImagen) {
             if (cartaMostradaImagen > playerCardValue) {
                 rondasGanadas++;
                 rondaGanada.text(rondasGanadas);
-                //add winnings to chips owned
-                //let betWon = true;//for (if) to change printed number  
-                //ChipsWon1();
                 GanarFichas();
             } else {
                 rondasPerdidas++;
                 rondaPerdida.text(rondasPerdidas);
-                //substranct chips betted from chips owned
-                //let betWon = false;
                 PerderFichas()
             }
         } else if (lastClick === 'lower') { //de la funcio ChangeClicked, recollim la informacio del ultim click que em afegit en "lastClick" i si es el boto lower entrem a aquest if
             if (cartaMostradaImagen < playerCardValue) {
                 rondasGanadas++;
                 rondaGanada.text(rondasGanadas);
-                //add winnings to chips owned
-                //let betWon = true;
-                //ChipsWon1();
                 GanarFichas();
             } else {
                 rondasPerdidas++;
                 rondaPerdida.text(rondasPerdidas);
-                //substranct chips betted from chips owned
-                //let betWon = false;
                 PerderFichas();
             }
         }
@@ -302,31 +296,22 @@ function compararCartas(cartaMostradaImagen) {
     }
 }
 
-/*function ChipsWon1(dineroActual1, posesion1) {
-    let chipsBetWon1 = posesion1 + dineroActual1;
-    dineroActual1.text(chipsBetWon1);
-    posesion1 = chipsBetWon1;
-    dineroActual1 = 0;
-}*/
 
 
-var restarFichasPorPerder = 1;
-var sumarFichasPorGanar = 1;
+
+//funcio que s'executa quan es perd una ronda
 function PerderFichas(){
-
+    posesion1 -= dineroActual1;
+    posesion2 -= dineroActual2;
+    posesion3 -= dineroActual3;
+    posesion4 -= dineroActual4;
+    posesion5 -= dineroActual5;
 
     dineroActual1 = 0;
     dineroActual2 = 0;
     dineroActual3 = 0;
     dineroActual4 = 0;
     dineroActual5 = 0;
-    
-
-    posesion1 -= sumarFichasPorGanar;
-    posesion2 -= sumarFichasPorGanar;
-    posesion3 -= sumarFichasPorGanar;
-    posesion4 -= sumarFichasPorGanar;
-    posesion5 -= sumarFichasPorGanar;
 
     $("#Posesion1").text(posesion1);
     $("#Posesion2").text(posesion2);
@@ -343,6 +328,7 @@ function PerderFichas(){
 
 }
 
+//funcio que s'executa quan es guanya una ronda
 function GanarFichas(){
     posesion1++;
     posesion2++;
@@ -373,51 +359,15 @@ function GanarFichas(){
 
 }
 
+/*let puntuacionFinal = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//const card = document.querySelector(".card");
-//from https://blog.nicm42.co.uk/flip-cards
-/* card.addEventListener("click", function () {
-  card.classList.toggle("show");
-}); */
-
-/* function Change() {
-    let genChoice = $("#generateChoice");
-    var randVal = Math.floor((Math.random() * 4) + 1);
-    console.log(randVal);
-    GenImg1(randVal);
-}
-
-function GenImg1(genChoice) {
-    console.log("Test " + genChoice);
-    let choice = $("#generateImage");
-
-    switch (genChoice) {
-        case 1:
-            choice.attr("src", "Cartas.png");
-            break;
-    }
-} */
-
-
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    puntuacionFinal = (posesion1 * 1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100); 
+    popup.classList.toggle("show");
+    myPopup.text(puntuacionFinal);
+    
+  }*/
 
 
 
