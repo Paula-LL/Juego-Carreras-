@@ -56,7 +56,7 @@ function canviarTexto4() {
 
 function SumoValor1(betWon) {
 
-    let dineroPosesion = $("#Posesion");
+    let dineroPosesion = $("#Posesion1");
     dineroPosesion.text(posesion1);
 
     let ChipClicked = $("#ChipClicked");
@@ -69,15 +69,13 @@ function SumoValor1(betWon) {
     ChipClicked.text(numero1)
     dineroActual1 = numero1;
 
-    if (betWon = true) {
-        ChipsWon1();
-    }
+
 
 }
 
 function SumoValor2() {
 
-    let dineroPosesion1 = $("#Posesion");
+    let dineroPosesion1 = $("#Posesion2");
     dineroPosesion1.text(posesion2);
 
 
@@ -96,7 +94,7 @@ function SumoValor2() {
 }
 
 function SumoValor3() {
-    let dineroPosesion2 = $("#Posesion");
+    let dineroPosesion2 = $("#Posesion3");
     dineroPosesion2.text(posesion3);
 
     let ChipClicked2 = $("#ChipClicked2");
@@ -117,7 +115,7 @@ function SumoValor3() {
 
 function SumoValor4() {
 
-    let dineroPosesion3 = $("#Posesion");
+    let dineroPosesion3 = $("#Posesion4");
     dineroPosesion3.text(posesion4);
 
     let ChipClicked3 = $("#ChipClicked3");
@@ -135,7 +133,7 @@ function SumoValor4() {
 }
 
 function SumoValor5() {
-    let dineroPosesion4 = $("#Posesion");
+    let dineroPosesion4 = $("#Posesion5");
     dineroPosesion4.text(posesion5);
 
     let ChipClicked4 = $("#ChipClicked4");
@@ -273,26 +271,30 @@ function compararCartas(cartaMostradaImagen) {
                 rondasGanadas++;
                 rondaGanada.text(rondasGanadas);
                 //add winnings to chips owned
-                let betWon = true;//for (if) to change printed number  
-                ChipsWon1();
+                //let betWon = true;//for (if) to change printed number  
+                //ChipsWon1();
+                GanarFichas();
             } else {
                 rondasPerdidas++;
                 rondaPerdida.text(rondasPerdidas);
                 //substranct chips betted from chips owned
-                let betWon = false;
+                //let betWon = false;
+                PerderFichas()
             }
         } else if (lastClick === 'lower') { //de la funcio ChangeClicked, recollim la informacio del ultim click que em afegit en "lastClick" i si es el boto lower entrem a aquest if
             if (cartaMostradaImagen < playerCardValue) {
                 rondasGanadas++;
                 rondaGanada.text(rondasGanadas);
                 //add winnings to chips owned
-                let betWon = true;
-                ChipsWon1();
+                //let betWon = true;
+                //ChipsWon1();
+                GanarFichas();
             } else {
                 rondasPerdidas++;
                 rondaPerdida.text(rondasPerdidas);
                 //substranct chips betted from chips owned
-                let betWon = false;
+                //let betWon = false;
+                PerderFichas();
             }
         }
         // Eliminar el ultim click que hem fet perque no es sumin rondes de mes
@@ -300,15 +302,76 @@ function compararCartas(cartaMostradaImagen) {
     }
 }
 
-function ChipsWon1(dineroActual1, posesion1) {
+/*function ChipsWon1(dineroActual1, posesion1) {
     let chipsBetWon1 = posesion1 + dineroActual1;
     dineroActual1.text(chipsBetWon1);
     posesion1 = chipsBetWon1;
     dineroActual1 = 0;
+}*/
+
+
+var restarFichasPorPerder = 1;
+var sumarFichasPorGanar = 1;
+function PerderFichas(){
+
+
+    dineroActual1 = 0;
+    dineroActual2 = 0;
+    dineroActual3 = 0;
+    dineroActual4 = 0;
+    dineroActual5 = 0;
+    
+
+    posesion1 -= sumarFichasPorGanar;
+    posesion2 -= sumarFichasPorGanar;
+    posesion3 -= sumarFichasPorGanar;
+    posesion4 -= sumarFichasPorGanar;
+    posesion5 -= sumarFichasPorGanar;
+
+    $("#Posesion1").text(posesion1);
+    $("#Posesion2").text(posesion2);
+    $("#Posesion3").text(posesion3);
+    $("#Posesion4").text(posesion4);
+    $("#Posesion5").text(posesion5);
+
+    $("#ChipClicked").text(0);
+    $("#ChipClicked1").text(0);
+    $("#ChipClicked2").text(0);
+    $("#ChipClicked3").text(0);
+    $("#ChipClicked4").text(0);
+
+
 }
 
+function GanarFichas(){
+    posesion1++;
+    posesion2++;
+    posesion3++;
+    posesion4++;
+    posesion5++;
+
+    // Reiniciar els diners apostats a 0
+    dineroActual1 = 0;
+    dineroActual2 = 0;
+    dineroActual3 = 0;
+    dineroActual4 = 0;
+    dineroActual5 = 0;
+
+    // Actualitzar els diners en posesio que te la persona
+    $("#Posesion1").text(posesion1);
+    $("#Posesion2").text(posesion2);
+    $("#Posesion3").text(posesion3);
+    $("#Posesion4").text(posesion4);
+    $("#Posesion5").text(posesion5);
 
 
+    $("#ChipClicked").text(0);
+    $("#ChipClicked1").text(0);
+    $("#ChipClicked2").text(0);
+    $("#ChipClicked3").text(0);
+    $("#ChipClicked4").text(0);
+
+}
 
 
 

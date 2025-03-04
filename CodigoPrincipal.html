@@ -16,6 +16,24 @@
 </head>
 
 <body>
+
+    <div class="container mesa">
+        <div style="height: 50;" class="row">
+            <div class="col">
+                <p class="tituloInstrucciones">Instrucciones</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="colorLetra letraColumnaIzquierda" >1. Primero dale al botón generar carta, esa será la carta que tendrás tú para empezar.</p>
+                <p class="colorLetra letraColumnaIzquierda">2. Después dale encima de las fichas de la columna de la derecha según lo que quieras apostar.</p>
+                <p class="colorLetra letraColumnaIzquierda">3. Según si crees que es mayor o menor, dale al botón "Higher" o "Lower".</p>
+                <p class="colorLetra letraColumnaIzquierda">4. Te aparecera la carta que toca siguiente. Si has ganado te sumara cierta cantidad de fichas a tu posesion, sino, perderas las fichas apostadas. </p>
+                <p class="colorLetra letraColumnaIzquierda">5. Ahora solo tendras que repetir este orden constantemente. Disfruta!</p>
+            </div>
+        </div>
+    </div>
+    <br>
     <div class="container mesa">
         <div class="row">
             <div class="col">
@@ -147,7 +165,7 @@
                                         <img onclick="canviarTexto()" id="Imagen1" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor1Transparente.png" alt="">
                                     </div>
                                     <div class="col">
-                                        <p class="letraColumnaDerecha ">Posesion: <span id="Posesion">5</span> </p>
+                                        <p class="letraColumnaDerecha ">Posesion: <span id="Posesion1">5</span> </p>
                                         <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked" >0</span> </p>        
                                     </div>
                                 </div>
@@ -162,7 +180,7 @@
                                         <img  onclick="canviarTexto1()" id="Imagen2" style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor5_Transparente.png" alt="">
                                     </div>
                                     <div class="col">
-                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion">5</span> </p>
+                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion2">5</span> </p>
                                         <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked1" >0</span> </p>
                                     </div>
                                 </div>
@@ -177,7 +195,7 @@
                                         <img  onclick="canviarTexto2()" id="Imagen3" style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor25-transparente.png" alt="">
                                     </div>
                                     <div class="col">
-                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion">5</span> </p>
+                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion3">5</span> </p>
                                         <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked2" >0</span> </p>
                                     </div>
                                 </div>
@@ -192,7 +210,7 @@
                                         <img  onclick="canviarTexto3()" id="Imagen4" style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor50-transparente.png" alt="">
                                     </div>
                                     <div class="col">
-                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion">5</span> </p>
+                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion4">5</span> </p>
                                         <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked3" >0</span> </p>
                                     </div>
                                 </div>
@@ -207,7 +225,7 @@
                                         <img  onclick="canviarTexto4()" id="Imagen5" style="margin-top: 2px; margin-bottom: 2px;" class="tamañoImagenesFichas imagenFichaCentrada cursor" src="../Juego-Carreras-/ImgJuegoApuestas/FichaValor100-transparente.png" alt="">
                                     </div>
                                     <div class="col">
-                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion">5</span> </p>
+                                        <p class="letraColumnaDerecha">Posesion: <span id="Posesion5">5</span> </p>
                                         <p class="letraColumnaDerecha">Apostadas: <span id="ChipClicked4">0</span> </p>
                                     </div>
                                 </div>
@@ -229,6 +247,7 @@
             </div>
         </div>
     </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

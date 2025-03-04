@@ -73,6 +73,17 @@
 
   }
 
+  .tituloInstrucciones{
+    text-align:center; 
+    font-size:27px; 
+    text-transform:uppercase; 
+    color:#ffffff; 
+    letter-spacing:1px;
+    font-family:"Playfair Display", serif; 
+    font-weight:400;
+    padding-top: 26px;
+  }
+
   .titulos {
     text-align:center; 
     font-size:27px; 
