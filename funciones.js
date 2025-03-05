@@ -333,12 +333,18 @@ function PerderFichas(){
 function GanarFichas(){
     /*if (){ //When button is clicked after compararCartas
     WinChips1();
-    }*/
+    }
     WinChips2();
     posesion3++;
     posesion4++;
     posesion5++;
-
+*/
+    posesion1 += dineroActual1;
+    posesion2 += dineroActual2;
+    posesion3 += dineroActual3;
+    posesion4 += dineroActual4;
+    posesion5 += dineroActual5;
+    
     // Reiniciar els diners apostats a 0
     dineroActual1 = 0;
     dineroActual2 = 0;
@@ -347,14 +353,14 @@ function GanarFichas(){
     dineroActual5 = 0;
 
     // Actualitzar els diners en posesio que te la persona
-    
+    $("#Posesion1").text(posesion1);
     $("#Posesion2").text(posesion2);
     $("#Posesion3").text(posesion3);
     $("#Posesion4").text(posesion4);
     $("#Posesion5").text(posesion5);
 
 
-    
+    $("#ChipClicked").text(0);
     $("#ChipClicked1").text(0);
     $("#ChipClicked2").text(0);
     $("#ChipClicked3").text(0);
@@ -365,7 +371,7 @@ function GanarFichas(){
 
 //Individual chip increment.
 
-function WinChips1(){
+/*function WinChips1(){
     posesion1++;
     $("#Posesion1").text(posesion1);
     $("#ChipClicked").text(0);
@@ -376,17 +382,14 @@ function WinChips2(){
     $("#Posesion2").text(posesion2);
     $("#ChipClicked1").text(0);
 }
-
+*/
 //intent de funcio perque es mostri la puntuacio final
 
 
-function myFunction() {
-    let PuntuacionFinal = $("PuntuacionFinal");
+function FinalScore() {
+    let PuntuacionFinal = $("#PuntuacionFinal");
     
     PuntuacionFinal = (posesion1 * 1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100); 
     PuntuacionFinal.text(PuntuacionFinal);
     
   }
-
-
-
