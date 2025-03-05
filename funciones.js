@@ -331,8 +331,10 @@ function PerderFichas(){
 
 //funcio que s'executa quan es guanya una ronda
 function GanarFichas(){
-    posesion1++;
-    posesion2++;
+    /*if (){ //When button is clicked after compararCartas
+    WinChips1();
+    }*/
+    WinChips2();
     posesion3++;
     posesion4++;
     posesion5++;
@@ -345,14 +347,14 @@ function GanarFichas(){
     dineroActual5 = 0;
 
     // Actualitzar els diners en posesio que te la persona
-    $("#Posesion1").text(posesion1);
+    
     $("#Posesion2").text(posesion2);
     $("#Posesion3").text(posesion3);
     $("#Posesion4").text(posesion4);
     $("#Posesion5").text(posesion5);
 
 
-    $("#ChipClicked").text(0);
+    
     $("#ChipClicked1").text(0);
     $("#ChipClicked2").text(0);
     $("#ChipClicked3").text(0);
@@ -361,6 +363,19 @@ function GanarFichas(){
 
 }
 
+//Individual chip increment.
+
+function WinChips1(){
+    posesion1++;
+    $("#Posesion1").text(posesion1);
+    $("#ChipClicked").text(0);
+}
+
+function WinChips2(){
+    posesion2++;
+    $("#Posesion2").text(posesion2);
+    $("#ChipClicked1").text(0);
+}
 
 //intent de funcio perque es mostri la puntuacio final
 
