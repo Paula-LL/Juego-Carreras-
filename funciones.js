@@ -383,13 +383,14 @@ function WinChips2(){
     $("#ChipClicked1").text(0);
 }
 */
+
 //intent de funcio perque es mostri la puntuacio final
 
 
 function FinalScore() {
-    let PuntuacionFinal = $("#PuntuacionFinal");
+    let PuntuacionFinal = $("#puntuacionFinal");
     
-    PuntuacionFinal = (posesion1 * 1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100); 
-    PuntuacionFinal.text(PuntuacionFinal);
-    
+    PuntuacionFinalChips = (posesion1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100); 
+    PuntuacionFinal.text(PuntuacionFinalChips);
+
   }
