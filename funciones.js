@@ -1,10 +1,12 @@
 let dom = $(document);
-dom.ready(generateChoice);
-dom.ready(generateImage);
 dom.ready(ChangeClicked);
-generateChoice = document.getElementById("generateChoice");
+dom.ready(PuntuacionFinalMostrar);
+dom.ready(mostrarRondasGanadas);
+dom.ready(mostrarRondasPerdidas);
 generateImage = document.getElementById("generateImage")
 posesion = document.getElementById("posesion");
+
+
 
 //User bet chips
 var dineroActual1 = 0;
@@ -155,8 +157,7 @@ function SumoValor5() {
 //FUNCIONES PARA CAMBIAR LAS IMAGENES DE LAS CARTA
 
 let puntuacionFinal = 0;
-let rondasGanadas = 0;
-let rondasPerdidas = 0;
+
 let playerCardValue = 0; // Se necesita almacenar la carta del jugador
 let isInitialized = false;
 
@@ -175,7 +176,6 @@ function PlayerCardDisplay(randValue) {
 
 
 function Change() {
-    let genChoice = $("#generateChoice");
     let randVal = Math.floor((Math.random() * 12) + 1);
 
     while (randVal === playerCardValue) {
@@ -259,7 +259,9 @@ function GenImg1(genChoice) {
 }
 
 
-
+var Ganadas;
+var Perdidas;
+ 
 function compararCartas(cartaMostradaImagen) {
     let rondaGanada = $("#rondaGanada");
     let rondaPerdida = $("#rondaPerdida");
@@ -293,6 +295,11 @@ function compararCartas(cartaMostradaImagen) {
         // Eliminar el ultim click que hem fet perque no es sumin rondes de mes
         $(document).data('lastClick', null);
     }
+    //intentar mostrar las rondas finales
+    mostrarRondasGanadas(rondasGanadas);
+    mostrarRondasPerdidas(rondasPerdidas);
+
+    
 }
 
 
@@ -329,16 +336,16 @@ function PerderFichas(){
 
 }
 
+
+let fichasFinal1 = 0;
+let fichasFinal5 = 0;
+let fichasFinal25 = 0;
+let fichasFinal50= 0;
+let fichasFinal100 = 0;
+
 //funcio que s'executa quan es guanya una ronda
 function GanarFichas(){
-    /*if (){ //When button is clicked after compararCartas
-    WinChips1();
-    }
-    WinChips2();
-    posesion3++;
-    posesion4++;
-    posesion5++;
-*/
+
     posesion1 += dineroActual1;
     posesion2 += dineroActual2;
     posesion3 += dineroActual3;
@@ -366,31 +373,35 @@ function GanarFichas(){
     $("#ChipClicked3").text(0);
     $("#ChipClicked4").text(0);
     
-
-}
-
-//Individual chip increment.
-
-/*function WinChips1(){
-    posesion1++;
-    $("#Posesion1").text(posesion1);
-    $("#ChipClicked").text(0);
-}
-
-function WinChips2(){
-    posesion2++;
-    $("#Posesion2").text(posesion2);
-    $("#ChipClicked1").text(0);
-}
-*/
-
-//intent de funcio perque es mostri la puntuacio final
-
-
-function FinalScore() {
-    let PuntuacionFinal = $("#puntuacionFinal");
     
-    PuntuacionFinalChips = (posesion1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100); 
-    PuntuacionFinal.text(PuntuacionFinalChips);
+
+}
+
+
+
+//intentos de funciones para mostrar la puntuacion final, rondas ganadas i rondas perdidas finales (por acabar aun)
+
+let rondasGanadas = 0;
+let rondasPerdidas = 0;
+let PuntuacionFinal = 0;
+
+function PuntuacionFinalMostrar() {
+
+    let puntuacionFinal = $("#puntuacionFinal");
+    PuntuacionFinal = (posesion1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100); 
+
+    puntuacionFinal.text(PuntuacionFinal);
+
+  }
+
+  function mostrarRondasGanadas(GanadasFinales){
+    let RondasGanadas = $("#RondasGanadas");
+    RondasGanadas.text(GanadasFinales);
+
+  }
+
+  function mostrarRondasPerdidas(PerdidasFinales){
+    let RondasPerdidas = $("#RondasPerdidas");
+    RondasPerdidas.text(PerdidasFinales);
 
   }
