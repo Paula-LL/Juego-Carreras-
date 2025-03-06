@@ -158,11 +158,28 @@ let puntuacionFinal = 0;
 let playerCardValue = 0; // Se necesita almacenar la carta del jugador
 let isInitialized = false;
 
+/*let disabled = false;
+
+botonGenerarCarta.addEventListener("click", PlayerCard);
+botonHigher.addEventListener("click", ChangeClicked);
+botonLower.addEventListener("click", ChangeClicked)*/
+
 function PlayerCard() {
     let randValue = Math.floor((Math.random() * 12) + 1);
     console.log("Player Number Card: " + randValue);
     playerCardValue = randValue;
     PlayerCardDisplay(randValue);
+    /*disabled = !disabled;
+  
+    span.innerHTML = disabled;
+  
+    if (disabled) {
+        botonHigher.removeEventListener("click", ChangeClicked);
+        botonHigher.disabled = true;
+    } else {
+        botonHigher.addEventListener("click", ChangeClicked);
+        botonHigher.disabled = false;
+    } */
 }
 
 
@@ -258,7 +275,7 @@ function GenImg1(genChoice) {
 
 var Ganadas;
 var Perdidas;
- 
+
 function compararCartas(cartaMostradaImagen) {
     let rondaGanada = $("#rondaGanada");
     let rondaPerdida = $("#rondaPerdida");
@@ -295,14 +312,14 @@ function compararCartas(cartaMostradaImagen) {
     }
 
 
-    
+
 }
 
 
 
 
 //funcio que s'executa quan es perd una ronda
-function PerderFichas(){
+function PerderFichas() {
     posesion1 -= dineroActual1;
     posesion2 -= dineroActual2;
     posesion3 -= dineroActual3;
@@ -328,7 +345,7 @@ function PerderFichas(){
     $("#ChipClicked3").text(0);
     $("#ChipClicked4").text(0);
 
-    
+
 
 
 }
@@ -337,18 +354,18 @@ function PerderFichas(){
 let fichasFinal1 = 0;
 let fichasFinal5 = 0;
 let fichasFinal25 = 0;
-let fichasFinal50= 0;
+let fichasFinal50 = 0;
 let fichasFinal100 = 0;
 
 //funcio que s'executa quan es guanya una ronda
-function GanarFichas(){
+function GanarFichas() {
 
     posesion1 += dineroActual1;
     posesion2 += dineroActual2;
     posesion3 += dineroActual3;
     posesion4 += dineroActual4;
     posesion5 += dineroActual5;
-    
+
     // Reiniciar els diners apostats a 0
     dineroActual1 = 0;
     dineroActual2 = 0;
@@ -369,25 +386,25 @@ function GanarFichas(){
     $("#ChipClicked2").text(0);
     $("#ChipClicked3").text(0);
     $("#ChipClicked4").text(0);
-    
+
 }
 let PuntuacionFinal;
 let rondasGanadas = 0;
 let rondasPerdidas = 0;
 
-function GuardarInformacion(){
+function GuardarInformacion() {
     PuntuacionFinal = (posesion1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100);
 
-//Guardem en un "magatzem" la informacio de la puntuacio final, les rondes guanyades, i les perdudes
+    //Guardem en un "magatzem" la informacio de la puntuacio final, les rondes guanyades, i les perdudes
     localStorage.setItem('puntuacionFinal', PuntuacionFinal);
     localStorage.setItem('rondasGanadas', rondasGanadas);
     localStorage.setItem('rondasPerdidas', rondasPerdidas);
-    
+
 
 
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     //Aqui recuperem la informacio que em guardat abans quan s'inicialitza el document
     let puntuacionFinal = localStorage.getItem('puntuacionFinal');
     let rondasGanadas = localStorage.getItem('rondasGanadas');
@@ -403,6 +420,9 @@ $(document).ready(function() {
     localStorage.removeItem('rondasGanadas');
     localStorage.removeItem('rondasPerdidas');
 });
+
+
+
 
 
 
