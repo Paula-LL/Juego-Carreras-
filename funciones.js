@@ -1,8 +1,5 @@
 let dom = $(document);
 dom.ready(ChangeClicked);
-dom.ready(PuntuacionFinalMostrar);
-dom.ready(mostrarRondasGanadas);
-dom.ready(mostrarRondasPerdidas);
 generateImage = document.getElementById("generateImage")
 posesion = document.getElementById("posesion");
 
@@ -254,7 +251,7 @@ function GenImg1(genChoice) {
             choice.attr("src", "../Juego-Carreras-/ImgJuegoApuestas/KofSpades.png");
             break;
     }
-
+    //crida a la funcio compararCartas
     compararCartas(cardValue);
 }
 
@@ -294,10 +291,9 @@ function compararCartas(cartaMostradaImagen) {
         }
         // Eliminar el ultim click que hem fet perque no es sumin rondes de mes
         $(document).data('lastClick', null);
+        GuardarInformacion();
     }
-    //intentar mostrar las rondas finales
-    mostrarRondasGanadas(rondasGanadas);
-    mostrarRondasPerdidas(rondasPerdidas);
+
 
     
 }
@@ -325,6 +321,7 @@ function PerderFichas(){
     $("#Posesion4").text(posesion4);
     $("#Posesion5").text(posesion5);
 
+    //posem el valor de les fitxes apostades a 0
     $("#ChipClicked").text(0);
     $("#ChipClicked1").text(0);
     $("#ChipClicked2").text(0);
@@ -366,42 +363,47 @@ function GanarFichas(){
     $("#Posesion4").text(posesion4);
     $("#Posesion5").text(posesion5);
 
-
+    //posem el valor de les fitxes apostades a 0
     $("#ChipClicked").text(0);
     $("#ChipClicked1").text(0);
     $("#ChipClicked2").text(0);
     $("#ChipClicked3").text(0);
     $("#ChipClicked4").text(0);
     
+}
+let PuntuacionFinal;
+let rondasGanadas = 0;
+let rondasPerdidas = 0;
+
+function GuardarInformacion(){
+    PuntuacionFinal = (posesion1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100);
+
+//Guardem en un "magatzem" la informacio de la puntuacio final, les rondes guanyades, i les perdudes
+    localStorage.setItem('puntuacionFinal', PuntuacionFinal);
+    localStorage.setItem('rondasGanadas', rondasGanadas);
+    localStorage.setItem('rondasPerdidas', rondasPerdidas);
     
+
 
 }
 
+$(document).ready(function() {
+    //Aqui recuperem la informacio que em guardat abans quan s'inicialitza el document
+    let puntuacionFinal = localStorage.getItem('puntuacionFinal');
+    let rondasGanadas = localStorage.getItem('rondasGanadas');
+    let rondasPerdidas = localStorage.getItem('rondasPerdidas');
+
+    // Mostrem els valors a la pagina 
+    $("#puntuacionFinal").text(puntuacionFinal);
+    $("#RondasGanadas").text(rondasGanadas);
+    $("#RondasPerdidas").text(rondasPerdidas);
+
+    //Aqui esborrem les dades anteriors per si la persona vol tornar a jugar de nou, que no estiguin les dades de l'altre ronda
+    localStorage.removeItem('puntuacionFinal');
+    localStorage.removeItem('rondasGanadas');
+    localStorage.removeItem('rondasPerdidas');
+});
 
 
-//intentos de funciones para mostrar la puntuacion final, rondas ganadas i rondas perdidas finales (por acabar aun)
 
-let rondasGanadas = 0;
-let rondasPerdidas = 0;
-let PuntuacionFinal = 0;
 
-function PuntuacionFinalMostrar() {
-
-    let puntuacionFinal = $("#puntuacionFinal");
-    PuntuacionFinal = (posesion1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100); 
-
-    puntuacionFinal.text(PuntuacionFinal);
-
-  }
-
-  function mostrarRondasGanadas(GanadasFinales){
-    let RondasGanadas = $("#RondasGanadas");
-    RondasGanadas.text(GanadasFinales);
-
-  }
-
-  function mostrarRondasPerdidas(PerdidasFinales){
-    let RondasPerdidas = $("#RondasPerdidas");
-    RondasPerdidas.text(PerdidasFinales);
-
-  }
