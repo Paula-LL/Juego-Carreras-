@@ -6,3 +6,4 @@ Si se gana se lleva el bote, si pierdes lo que has apostado se pierde
 1 jugador
 Cartas
 
+-- Iris Frades, Paula Lizé Lucea
