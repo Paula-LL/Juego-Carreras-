@@ -3,8 +3,6 @@ dom.ready(ChangeClicked);
 generateImage = document.getElementById("generateImage")
 posesion = document.getElementById("posesion");
 
-
-
 //User bet chips
 var dineroActual1 = 0;
 var dineroActual2 = 0;
@@ -18,8 +16,6 @@ var posesion2 = 5;
 var posesion3 = 5;
 var posesion4 = 5;
 var posesion5 = 5;
-
-
 
 //FUNCIONES PARA CANVIAR EL TEXTO CUANDO SE CLIQUEN LAS IMAGENES DE LAS FICHAS
 
@@ -66,8 +62,6 @@ function SumoValor1() {
     ChipClicked.text(numero1)
     dineroActual1 = numero1;
 
-
-
 }
 
 function SumoValor2() {
@@ -86,8 +80,6 @@ function SumoValor2() {
     ChipClicked1.text(numero2)
     dineroActual2 = numero2;
 
-
-
 }
 
 function SumoValor3() {
@@ -103,10 +95,6 @@ function SumoValor3() {
 
     ChipClicked2.text(numero3)
     dineroActual3 = numero3;
-
-
-
-
 
 }
 
@@ -125,8 +113,6 @@ function SumoValor4() {
     ChipClicked3.text(numero4)
     dineroActual4 = numero4;
 
-
-
 }
 
 function SumoValor5() {
@@ -143,13 +129,7 @@ function SumoValor5() {
     ChipClicked4.text(numero5)
     dineroActual5 = numero5;
 
-
-
 }
-
-
-
-
 
 //FUNCIONES PARA CAMBIAR LAS IMAGENES DE LAS CARTA
 
@@ -164,10 +144,11 @@ function PlayerCard() {
     console.log("Player Number Card: " + randValue);
     playerCardValue = randValue;
     PlayerCardDisplay(randValue);
-  
     
-}
+        $(".buttonLower").prop('disabled', false);
+        $(".buttonHigh").prop('disabled', false);
 
+}
 
 
 function PlayerCardDisplay(randValue) {
@@ -178,13 +159,12 @@ function PlayerCardDisplay(randValue) {
     disables = false;
 
     if(userCard.click){
-        $("#buttonLower").prop('disabled', true);
-        $("#buttonHigh").prop('disabled', true);
+        $(".buttonLower").prop('disabled', true);
+        $(".buttonHigh").prop('disabled', true);
     }else{
-        $("#buttonLower").prop('disabled', false);
-        $("#buttonHigh").prop('disabled', false);
+        $(".buttonLower").prop('disabled', false);
+        $(".buttonHigh").prop('disabled', false);
     }
-
 
 }
 
@@ -270,6 +250,9 @@ function GenImg1(genChoice) {
     }
     //crida a la funcio compararCartas
     compararCartas(cardValue);
+    
+    $(".buttonLower").prop('disabled', true);
+    $(".buttonHigh").prop('disabled', true);
 }
 
 
@@ -311,12 +294,7 @@ function compararCartas(cartaMostradaImagen) {
         GuardarInformacion();
     }
 
-
-
 }
-
-
-
 
 //funcio que s'executa quan es perd una ronda
 function PerderFichas() {
@@ -344,9 +322,6 @@ function PerderFichas() {
     $("#ChipClicked2").text(0);
     $("#ChipClicked3").text(0);
     $("#ChipClicked4").text(0);
-
-
-
 
 }
 
@@ -400,8 +375,6 @@ function GuardarInformacion() {
     localStorage.setItem('rondasGanadas', rondasGanadas);
     localStorage.setItem('rondasPerdidas', rondasPerdidas);
 
-
-
 }
 
 $(document).ready(function () {
@@ -420,10 +393,3 @@ $(document).ready(function () {
     localStorage.removeItem('rondasGanadas');
     localStorage.removeItem('rondasPerdidas');
 });
-
-
-
-
-
-
-
