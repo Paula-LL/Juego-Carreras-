@@ -138,7 +138,7 @@ let puntuacionFinal = 0;
 let playerCardValue = 0; // Se necesita almacenar la carta del jugador
 let isInitialized = false;
 
-
+//Per a generar carta del player
 function PlayerCard() {
     let randValue = Math.floor((Math.random() * 12) + 1);
     console.log("Player Number Card: " + randValue);
@@ -168,7 +168,7 @@ function PlayerCardDisplay(randValue) {
 
 }
 
-
+//Per assegurar-se que el numero de carta del player no pugui sortir a la cara central
 function Change() {
     let randVal = Math.floor((Math.random() * 12) + 1);
 
@@ -259,6 +259,7 @@ function GenImg1(genChoice) {
 var Ganadas;
 var Perdidas;
 
+//Comparem la carta central amb la carta de l'usuari
 function compararCartas(cartaMostradaImagen) {
     let rondaGanada = $("#rondaGanada");
     let rondaPerdida = $("#rondaPerdida");
@@ -367,6 +368,7 @@ let PuntuacionFinal;
 let rondasGanadas = 0;
 let rondasPerdidas = 0;
 
+//Guardem informació per a la pantalla final
 function GuardarInformacion() {
     PuntuacionFinal = (posesion1) + (posesion2 * 5) + (posesion3 * 25) + (posesion4 * 50) + (posesion5 * 100);
 
