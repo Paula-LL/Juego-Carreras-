@@ -104,6 +104,17 @@ body{
     color: white;
   }
 
+  .letraPaginaFinal{
+    color: white;
+    font-size:13px; 
+    text-transform:uppercase; 
+    color:#ffffff; 
+    letter-spacing:1px;
+    font-family:"Playfair Display", serif; 
+    font-weight:20;
+    text-align: center;
+  }
+
   .mesa{
     border-radius: 20px; 
     border: 10px solid rgb(116, 63, 4); 
@@ -156,7 +167,7 @@ body{
   vertical-align: top;
 }
 .imagenEmoji{
-  padding-left: 100px;
+  padding-left: 30px;
   padding-top: 30px;
 }
 
