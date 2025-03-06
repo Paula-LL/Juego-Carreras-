@@ -158,34 +158,34 @@ let puntuacionFinal = 0;
 let playerCardValue = 0; // Se necesita almacenar la carta del jugador
 let isInitialized = false;
 
-/*let disabled = false;
-
-botonGenerarCarta.addEventListener("click", PlayerCard);
-botonHigher.addEventListener("click", ChangeClicked);
-botonLower.addEventListener("click", ChangeClicked)*/
 
 function PlayerCard() {
     let randValue = Math.floor((Math.random() * 12) + 1);
     console.log("Player Number Card: " + randValue);
     playerCardValue = randValue;
     PlayerCardDisplay(randValue);
-    /*disabled = !disabled;
   
-    span.innerHTML = disabled;
-  
-    if (disabled) {
-        botonHigher.removeEventListener("click", ChangeClicked);
-        botonHigher.disabled = true;
-    } else {
-        botonHigher.addEventListener("click", ChangeClicked);
-        botonHigher.disabled = false;
-    } */
+    
 }
 
 
 
 function PlayerCardDisplay(randValue) {
     document.getElementById("displayCard").innerHTML = randValue;
+    let userCard = $("#userCard");
+
+
+    disables = false;
+
+    if(userCard.click){
+        $("#buttonLower").prop('disabled', true);
+        $("#buttonHigh").prop('disabled', true);
+    }else{
+        $("#buttonLower").prop('disabled', false);
+        $("#buttonHigh").prop('disabled', false);
+    }
+
+
 }
 
 
