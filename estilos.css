@@ -1,5 +1,5 @@
 body{
-  background-image: url(https://static.vecteezy.com/system/resources/previews/005/007/251/non_2x/dark-poker-symbols-background-card-signs-background-abstract-gambling-background-free-vector.jpg);
+  background-image: url("ImgJuegoApuestas/Fondo_juego.jpg");
 }
 
 
@@ -118,20 +118,20 @@ body{
   .mesa{
     border-radius: 20px; 
     border: 10px solid rgb(116, 63, 4); 
-    background-image: url(https://img.freepik.com/vector-premium/fondo-mesa-poker-color-verde_47243-1067.jpg);
+    background-image: url(ImgJuegoApuestas/Fondo_Mesa_Poker.png);
     background-size: 1000px 1000px;
   }
   .mesa1{
    
     border-radius: 20px; 
     border: 10px solid rgb(116, 63, 4); 
-    background-image: url(https://img.freepik.com/vector-premium/fondo-mesa-poker-color-verde_47243-1067.jpg);
+    background-image: url(ImgJuegoApuestas/Fondo_Mesa_Poker.png);
     background-size: 1000px 1000px;
   }
   .mesa2{
     border-radius: 20px; 
     border: 10px solid rgb(116, 63, 4); 
-    background-image: url(https://img.freepik.com/vector-premium/fondo-mesa-poker-color-verde_47243-1067.jpg);
+    background-image: url(ImgJuegoApuestas/Fondo_Mesa_Poker.png);
     background-size: 1000px 1000px;
 
   }
